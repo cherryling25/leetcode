@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>removeDuplicates</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var nums = [0,0,1,1,1,2,2,3,3,4];
+    var arr = [];
+    var index = 0;
+
+    for (var i = 0; i < nums.length; i++) {
+        
+        var ex = 0; 
+        for (var j = 0; j < arr.length; j++) {
+            if (nums[i]===arr[j]) {
+                ex = 1;
+                break;
+            }
+            
+        }
+        if (ex===0) {
+            arr[index] = nums[i]; 
+            index ++;     
+        }
+    }
+
+    for (var i = 0; i < arr.length; i++) {
+        nums[i] = arr[i];
+        
+    }
+
+    alert(arr.length);
+    alert(nums);
+</script>
+</html>
