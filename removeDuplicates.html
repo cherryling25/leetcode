@@ -8,7 +8,7 @@
     
 </body>
 <script>
-    var nums = [0,0,1,1,1,2,2,3,3,4];
+    /* var nums = [0,0,1,1,1,2,2,3,3,4];
     var arr = [];
     var index = 0;
 
@@ -34,6 +34,37 @@
     }
 
     alert(arr.length);
-    alert(nums);
+    alert(nums); */
+
+
+   var nums = [0,0,1,1,1,2,2,3,3,4];
+   var arr = [];
+   var index = 0;
+
+   for (var i = 0; i < nums.length; i++) {
+       
+        var e = 0;  //默认 e = 0
+        for (var j = 0; j < arr.length; j++) {
+            if (nums[i]===arr[j]) {
+                e = 1;  
+                break;
+            }
+            
+        }
+        if (e===0) {   //if(e === 0)   说明 arr里面没有，没有的话就要保存进去
+            arr[index] = nums[i];   //?index    index 是用来记录 arr 的下标的， 数组一定有下标
+            index ++;
+        }
+       
+   }
+
+   for (var i = 0; i < arr.length; i++) {
+       nums[i] = arr[i];    
+       //?nums[i] = arr[j];     nums[i] = arr[i]  这里是赋值。  不能用 arr[j] 这里j 已经没在作用域里面了
+       
+   }
+
+   alert(arr.length);
+   alert(nums);
 </script>
 </html>
